@@ -1,0 +1,21 @@
+
+    <ion-buttons class="menubutton">
+        <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+<ion-content padding>
+  <h3>Cadastre uma Notícia</h3>
+
+      <ion-button (click)="arquivos()" shape="round" expand="full" class="back2">Arquivo</ion-button>
+  
+      <ion-item>
+        <ion-textarea placeholder="Coloque sua descrição aqui..."></ion-textarea>
+      </ion-item>
+  <ion-button
+      [disabled]="!newNoticias.imagem || !newNoticias.descricao"
+      (click)="adicionarNotic()" shape="round" expand="full" class="confirm">
+      SALVAR
+  </ion-button>
+  <ion-button (click)="voltar()" shape="round" expand="full" class="back">
+      VOLTAR
+  </ion-button>
+</ion-content>

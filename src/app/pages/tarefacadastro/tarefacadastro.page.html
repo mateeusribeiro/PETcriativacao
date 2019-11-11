@@ -1,0 +1,21 @@
+
+    <ion-buttons class="menubutton">
+        <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+
+<ion-content padding>
+  <h3>Cadastre uma Tarefa</h3>
+  <ion-item class="item">
+      <ion-label position="stacked">Nome</ion-label>
+      <ion-input [(ngModel)]="newTarefas.nome" type="nome"></ion-input>
+  </ion-item>
+ 
+  <ion-button
+      [disabled]="!newTarefas.nome"
+      (click)="adicionarTarefa()" shape="round" expand="full" class="confirm">
+      SALVAR
+  </ion-button>
+  <ion-button (click)="voltar()" shape="round" expand="full" class="back">
+      VOLTAR
+  </ion-button>
+</ion-content>

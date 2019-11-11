@@ -1,0 +1,21 @@
+<ion-content padding>
+
+    <img src="../../assets/icon/petimage2.webp" alt="Logo">
+    <ion-item class="item">
+        <ion-label position="stacked">Login</ion-label>
+        <ion-input [(ngModel)]="email" type="email"></ion-input>
+    </ion-item>
+    <ion-item class="item">
+        <ion-label position="stacked">Senha</ion-label>
+        <ion-input [(ngModel)]="password" type="password"></ion-input>
+    </ion-item>
+    <ion-button [disabled]="!email || !password " (click)="login()" shape="round" expand="full"
+        class="confirm">
+        ENTRAR
+    </ion-button>
+    <ion-item lines="none">
+        <ion-label (click)="register()" text-center class="f-lobster register">
+            Registrar-se
+        </ion-label>
+    </ion-item>
+</ion-content>

@@ -1,0 +1,22 @@
+
+    <ion-buttons class="menubutton">
+        <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+
+<ion-content padding>
+  <h3>Cadastre um Projeto</h3>
+  <ion-item class="item">
+      <ion-label position="stacked">Nome</ion-label>
+      <ion-input [(ngModel)]="newProjetos.nome" type="nome"></ion-input>
+  </ion-item>
+ 
+  <ion-button
+      [disabled]="!newProjetos.nome"
+      (click)="adicionarProj()" shape="round" expand="full" class="confirm">
+      SALVAR
+  <ion-select-option *ngFor="let projetos of lista" value="{{projetos.nome}}">{{projetos.nome}}</ion-select-option>
+  </ion-button>
+  <ion-button (click)="voltar()" shape="round" expand="full" class="back">
+      VOLTAR
+  </ion-button>
+</ion-content>
