@@ -1,65 +1,22 @@
-<ion-content class="fundo">
-    <ion-fab horizontal="end" vertical="bottom" slot="fixed">
-        <ion-fab-button color="light">
-            <ion-icon name="add"></ion-icon>
-        </ion-fab-button>
-        <ion-fab-list side="start">
-            <ion-fab-button color="light" (click)="telaProj()">
-                <ion-icon name="briefcase"></ion-icon>
-            </ion-fab-button>
-            <ion-fab-button color="light" (click)="telaNotic()">
-                <ion-icon name="paper"></ion-icon>
-            </ion-fab-button>
-            <ion-fab-button color="light" (click)="telaTarefa()">
-                <ion-icon name="clipboard"></ion-icon>
-            </ion-fab-button>
-        </ion-fab-list>
-    </ion-fab>
-
-    <ion-buttons class="menubutton">
-    <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <h3>PETcriativação</h3>
-
-    <img class="image" src="../../assets/icon/petimage2.webp" alt="Logo">
-    <ion-list>
-        <ion-list-header class="header">
-            <h2>Projetos</h2>
-            <ion-icon class="iconeadd" name="briefcase"></ion-icon>
-        </ion-list-header>
-       
-        <div class="div1">
-            <ion-item *ngFor="let projeto of lista" >
-            <ion-button class="confirm"> {{projeto.nome}}</ion-button>
-            <ion-icon (click)="deletar(projeto.uid)" class="iconedelete" name="trash"></ion-icon>
-            <ion-icon (click)="editar(projeto.uid)" class="iconeedit" name="create"></ion-icon>
-            </ion-item>
-        </div>
+<ion-header class="header">
+    <ion-toolbar>
+        <ion-title>Projetos</ion-title>
+        <ion-icon  (click)="add()" class="add" name="add"></ion-icon>
+        <ion-icon (click)="deletar(projeto.uid)" class="iconedelete" name="trash"></ion-icon>
+        <ion-icon (click)="editar(projeto.uid)" class="iconeedit" name="create"></ion-icon>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-list (click)="navegar(produto.uid)">
+        <ion-item *ngFor="let projeto of lista">
+                <ion-avatar slot="start">
+                        <ion-icon class="icone" name="document"></ion-icon>
+                        </ion-avatar>
+                        <ion-label>
+                                <h3> {{projeto.nome}}</h3>
+                            </ion-label>
+                        </ion-item>
     </ion-list>
-    <ion-list>
-            <ion-list-header class="header">
-                <h2>Notícias</h2>
-                <ion-icon class="iconeadd" name="paper"></ion-icon>
-            </ion-list-header>
-    
-            <div class="div2">
-                    <img class="g1" src="../../assets/icon/noticia.jpg" alt="Logo">
-            </div>
-        </ion-list>
-    
-    <ion-list>
-        <ion-list-header class="header">
-            <h2>Tarefas</h2>
-            <ion-icon class="iconeadd" name="clipboard"></ion-icon>
-        </ion-list-header>
-
-        <div class="div2">
-                <ion-item *ngFor="let tarefas of listaTarefas">
-                <ion-button class="confirm"> {{tarefas.nome}}</ion-button>
-                <ion-icon (click)="deletarTarefas(tarefas.uid)" class="iconedelete" name="trash"></ion-icon>
-                <ion-icon (click)="editarTarefas(tarefas.uid)" class="iconeedit" name="create"></ion-icon>
-                </ion-item>
-            </div>
-    </ion-list>
-
 </ion-content>
+
+

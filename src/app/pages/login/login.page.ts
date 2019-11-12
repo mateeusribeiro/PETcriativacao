@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Login } from 'src/app/entities/login';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { AlertController } from '@ionic/angular';
+import { AlertController, ModalController, LoadingController, ToastController  } from '@ionic/angular';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 
 import { AngularFireDatabase } from '@angular/fire/database';
@@ -35,7 +35,7 @@ async inicializarLogins() {
     login() {
       this.authService.login(this.email, this.password)
         .then(() => {
-          this.router.navigate(['/home']);
+          this.router.navigate(['/tabs']);
         }).catch(error => {
           console.log(error);
           this.presentAlert('E-mail e/ou senha inválido(s).');

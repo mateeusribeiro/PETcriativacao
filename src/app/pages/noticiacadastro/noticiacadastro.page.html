@@ -1,21 +1,30 @@
-
-    <ion-buttons class="menubutton">
-        <ion-menu-button></ion-menu-button>
-        </ion-buttons>
-<ion-content padding>
-  <h3>Cadastre uma Notícia</h3>
-
-      <ion-button (click)="arquivos()" shape="round" expand="full" class="back2">Arquivo</ion-button>
+<ion-header class="header">
+    <ion-toolbar>
+        <ion-title>Notícias</ion-title>
+        <ion-icon  (click)="add()" class="add" name="add"></ion-icon>
+        <ion-icon (click)="deletar(projeto.uid)" class="iconedelete" name="trash"></ion-icon>
+        <ion-icon (click)="editar(projeto.uid)" class="iconeedit" name="create"></ion-icon>
+    </ion-toolbar>
+<ion-content fullscreen>
+    <ion-card>
+      <img src="../../assets/icon/noticia.jpg" />
+      <ion-card-header>
+        <ion-card-subtitle>Destination</ion-card-subtitle>
+        <ion-card-title>Madison, WI</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named the capital of the Wisconsin Territory in 1836.
+      </ion-card-content>
+    </ion-card>
   
-      <ion-item>
-        <ion-textarea placeholder="Coloque sua descrição aqui..."></ion-textarea>
-      </ion-item>
-  <ion-button
-      [disabled]="!newNoticias.imagem || !newNoticias.descricao"
-      (click)="adicionarNotic()" shape="round" expand="full" class="confirm">
-      SALVAR
-  </ion-button>
-  <ion-button (click)="voltar()" shape="round" expand="full" class="back">
-      VOLTAR
-  </ion-button>
-</ion-content>
+      <ion-card>
+        <img src="../../assets/icon/noticia.jpg" />
+        <ion-card-header>
+          <ion-card-subtitle>Destination</ion-card-subtitle>
+          <ion-card-title>Madison, WI</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named the capital of the Wisconsin Territory in 1836.
+        </ion-card-content>
+      </ion-card>
+    </ion-content>

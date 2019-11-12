@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Tarefas } from 'src/app/entities/tarefas';
-
+import { MenuController, LoadingController, ToastController  } from '@ionic/angular';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { Observable } from 'rxjs';
 
@@ -20,16 +20,31 @@ export class TarefacadastroPage {
   newTarefas: Tarefas;
 
   listaTarefas: Tarefas[];
+  loading: any;
 
-  constructor(private dbService: DBService, private router: Router) { 
+  constructor(private dbService: DBService, private router: Router, public loadingController: LoadingController) { 
     this.listaTarefas= [];
     this.newTarefas= new Tarefas();
     this.inicializarTarefas();
   }
 
   async inicializarTarefas() {
+    await this.presentLoading();
+
     this.listaTarefas = await this.dbService.listWithUIDs<Tarefas>('tarefas');
+
+    await this.hideLoading();
   }
+  async hideLoading() {
+    this.loading.dismiss();
+    }
+    async presentLoading() {
+      this.loading = await this.loadingController.create({
+        message: 'Carregando'
+      });
+      await this.loading.present();
+      
+      }
 
     async adicionarTarefa() {
       await this.dbService.insertInList('tarefas', this.newTarefas);

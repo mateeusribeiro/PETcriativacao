@@ -1,39 +1,68 @@
+@import url("https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz");
+h3{
+  font-size: 21px;
+  font-family: inherit;
+}
+h2 {
+  position: absolute;
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-size: 30px;
+  height: 75px;
+  left: 135px;
+  color: white;
+}
+.back {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  --color: #ffffffbd;
+  font-size: 18px;
+}
 
- @import url('https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz');
- h3 {
-     font-size: 30px;
-     font-family: 'Lobster', cursive;
-     color: #098492cc;
-     text-align: center;
- }
- 
- .confirm,
- .back {
-     font-family: 'Yanone Kaffeesatz', sans-serif;
-     --color:#ffffffbd; 
-     font-size: 18px;
- }
- 
- .confirm {
-     margin-top: 30px;
-     --background: #1eb381bd;
- }
- 
- .back {
-     margin-top: 10px;
-     --background: #1de9c796;
- }
- 
- .item {
-     font-family: 'Yanone Kaffeesatz', sans-serif;
-     --color: #098492;
-     --background: #0cd2e800;
- }
- .menubutton{
-   width: 50px;
-   height: 50px;
-   background-color: white;
- }
- .icone{
-     font-size: 30px;
- }
+.confirm {
+  margin-top: 30px;
+  --background: #1eb381bd;
+}
+
+.back {
+  margin-top: 10px;
+  --background: #1de9c796;
+}
+.menubutton {
+  width: 50px;
+  height: 50px;
+  background-color: white;
+}
+.icone {
+  font-size: 43px;
+  COLOR: #238e6a;
+}
+.iconedelete {
+  position: absolute;
+  font-size: 27px;
+  top: 13px;
+  left: 312px;
+  position: absolute;
+  color: #ff0320;
+}
+.iconeedit {
+  font-size: 27px;
+  top: 13px;
+  left: 277px;
+  position: absolute;
+  color: #0363ff;
+}
+.iconecheckbox {
+  position: absolute;
+  font-size: 35px;
+  top: 12px;
+  left: 187px;
+  position: absolute;
+  color: #0aad48e7;
+}
+.add {
+  position: absolute;
+  font-size: 40px;
+  top: 8px;
+  left: 226px;
+  position: absolute;
+  color: #0ff065e7;
+}

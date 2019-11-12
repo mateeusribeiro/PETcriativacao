@@ -1,9 +1,11 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>projeto</ion-title>
-  </ion-toolbar>
+<ion-header class="header">
+    <ion-toolbar>
+        <ion-title>{{projeto.id}}</ion-title>
+        <ion-icon  (click)="add()" class="add" name="add"></ion-icon>
+        <ion-icon (click)="deletar(projeto.uid)" class="iconedelete" name="trash"></ion-icon>
+        <ion-icon (click)="editar(projeto.uid)" class="iconeedit" name="create"></ion-icon>
+    </ion-toolbar>
 </ion-header>
-
 <ion-content>
-
+  
 </ion-content>
