@@ -1,8 +1,9 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { MenuController, LoadingController, ToastController  } from '@ionic/angular';
-import { Noticias} from 'src/app/entities/noticias';
+import { Component, OnInit } from '@angular/core';
+import { Projetos } from 'src/app/entities/projetos';
+
 import { AngularFireDatabase } from '@angular/fire/database';
 import { Observable } from 'rxjs';
+import { ModalController } from '@ionic/angular';
 import { map } from 'rxjs/operators';
 import { DBService } from 'src/app/services/db.service';
 import {LoginPage} from '../login/login.page';
@@ -16,46 +17,22 @@ import { Router } from '@angular/router';
 })
 export class NoticiacadastroPage {
 
-  newNoticias: Noticias;
+  newProjetos: Projetos;
 
-  lista: Noticias[];
-  loading: any;
-
-  constructor(private dbService: DBService, private router: Router,public loadingController: LoadingController){ 
-    this.lista= [];
-    this.newNoticias= new Noticias();
-    this.inicializarNoticias();
+  constructor(private dbService: DBService, private router: Router, private modalController: ModalController) { 
+    this.newProjetos= new Projetos();
   }
-
-  async inicializarNoticias() {
-    await this.presentLoading();
-
-       this.lista = await this.dbService.listWithUIDs<Noticias>('projetos');
-
-await this.hideLoading();
- 
-  }
-  async hideLoading() {
-    this.loading.dismiss();
-  }
-  async presentLoading() {
-    this.loading = await this.loadingController.create({
-      message: 'Carregando'
-    });
-    await this.loading.present();
-  }
-
-   async adicionarNotic() {
-      alert('Notícia adicionada com sucesso!');
   
-      await this.dbService.insertInList('projeto', this.newNoticias);
+    async adicionarProj() {
   
-       this.newNoticias = new Noticias();
+     await this.dbService.insertInList('projeto', this.newProjetos);
+
+     alert('Notícia cadastrada com sucesso!');
+  
+      this.newProjetos = new Projetos();
     }
     voltar(){
-
-      
-      this.router.navigate(['home']);
+      this.modalController.dismiss();
     }
   
   }

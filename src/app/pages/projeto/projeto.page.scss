@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz");
+
+h2 {
+   position: absolute;
+   font-family: "Yanone Kaffeesatz", sans-serif;
+   font-size: 30px;
+   height: 75px;
+   left: 135px;
+   color: white;
+}
+h3{
+  font-size: 21px;
+  font-family: inherit;
+}
+.confirm {
+  width: 263px;
+  --background: #4fd750cc;
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-size: 17px;
+  font-weight: bolder;
+}
+.div2 {
+  position: relative;
+}
+
+.image {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  left: 290px;
+  top: 3px;
+}
+.limpeza {
+  position: relative;
+  top: 325px;
+  background-color: #98d2eca6;
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-size: 13px;
+  font-weight: bolder;
+}
+.reuniao {
+  position: relative;
+  top: 327px;
+  --backgound: #98d2eca6;
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-size: 13px;
+  font-weight: bolder;
+}
+.compras {
+  position: relative;
+  top: 330px;
+  --backgound: #98d2eca6;
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-size: 13px;
+  font-weight: bolder;
+}
+.menubutton {
+  width: 50px;
+  height: 50px;
+  background-color: white;
+}
+.icone {
+  font-size: 43px;
+  COLOR: #238e6a;
+}
+.add {
+  position: absolute;
+  font-size: 40px;
+  top: 8px;
+  left: 298px;
+  position: absolute;
+  color: #0ff065e7;
+}
+.iconedelete {
+  font-size: 27px;
+  top: 13px;
+  left: 254px;
+  position: absolute;
+  color: #ff0320;
+}
+.iconeedit {
+  font-size: 27px;
+  top: 13px;
+  left: 213px;
+  position: absolute;
+  color: #0363ff;
+}
+
+.title{
+  color: white;
+  font-size: 24px;
+}
+.iconecheckbox {
+  position: absolute;
+  font-size: 35px;
+  top: 12px;
+  left: 187px;
+  position: absolute;
+  color: #0aad48e7;
+}
+.noticia {
+  position: absolute;
+
+  top: -1px;
+}
+.header {
+   color: #2D6B80;
+}
+.botao {
+  width: 35px;
+  left: 270px;
+  background: border-box;
+  top: -3px;
+  height: 34px;
+}
+.botao2 {
+  width: 35px;
+  left: 270px;
+  background: border-box;
+  top: -3px;
+  height: 34px;
+}
+.lista{
+  background-color: #2D6B80;
+  position: relative;
+}
+.letra{
+  font-size: 38px;
+  font-family: "Yanone Kaffeesatz", sans-serif;
+}

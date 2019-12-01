@@ -1,13 +1,13 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { Tarefas } from 'src/app/entities/tarefas';
-import { MenuController, LoadingController, ToastController  } from '@ionic/angular';
+import { Component, OnInit } from '@angular/core';
+import { Projetos } from 'src/app/entities/projetos';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { Observable } from 'rxjs';
-
+import { ModalController, AlertController } from '@ionic/angular';
 import { map } from 'rxjs/operators';
 import { DBService } from 'src/app/services/db.service';
 import {LoginPage} from '../login/login.page';
 import { Router } from '@angular/router';
+import { Tarefas } from 'src/app/entities/tarefas';
 
 @Component({
   selector: 'app-tarefacadastro',
@@ -19,46 +19,26 @@ export class TarefacadastroPage {
 
   newTarefas: Tarefas;
 
-  listaTarefas: Tarefas[];
-  loading: any;
-
-  constructor(private dbService: DBService, private router: Router, public loadingController: LoadingController) { 
-    this.listaTarefas= [];
+  constructor(private dbService: DBService, private router: Router, private modalController: ModalController,public alertController: AlertController) { 
     this.newTarefas= new Tarefas();
-    this.inicializarTarefas();
   }
-
-  async inicializarTarefas() {
-    await this.presentLoading();
-
-    this.listaTarefas = await this.dbService.listWithUIDs<Tarefas>('tarefas');
-
-    await this.hideLoading();
-  }
-  async hideLoading() {
-    this.loading.dismiss();
-    }
-    async presentLoading() {
-      this.loading = await this.loadingController.create({
-        message: 'Carregando'
-      });
-      await this.loading.present();
-      
-      }
-
+  
     async adicionarTarefa() {
-      await this.dbService.insertInList('tarefas', this.newTarefas);
+  
+     await this.dbService.insertInList('tarefas', this.newTarefas);
 
-      this.inicializarTarefas();
-
-      alert('Tarefa cadastrada com sucesso!');
-      
-      this.newTarefas= new Tarefas();
-
+     this.presentAlert('Tarefa cadastrada com sucesso!')
+  
+      this.newTarefas = new Tarefas();
     }
     voltar(){
-
-      this.router.navigate(['home']);
+      this.modalController.dismiss();
     }
-  
+    async presentAlert(msg: string) {
+      const alert = await this.alertController.create({
+        message: msg,
+        buttons: ['OK']
+      });
+      await alert.present();
+    }
   }

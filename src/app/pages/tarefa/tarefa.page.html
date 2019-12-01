@@ -1,0 +1,22 @@
+
+<ion-header class="header">
+  <ion-toolbar color="dark">
+      <ion-title class="title">Tarefas</ion-title>
+      <ion-icon  (click)="add()" class="add" name="add"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list (click)="voltar()">
+      <ion-item *ngFor="let tarefas of listaTarefas">
+              <ion-avatar slot="start">
+                      <ion-icon class="icone" name="clipboard"></ion-icon>
+                      </ion-avatar>
+                      <ion-label>
+                              <h3> {{tarefas.nome}}</h3>
+                          </ion-label>
+                          <ion-icon (click)="editar()" class="iconeedit" name="create"></ion-icon>
+                          <ion-icon (click)="deletar(tarefas.uid)" class="iconedelete" name="trash"></ion-icon>
+                      </ion-item>
+  </ion-list>
+</ion-content>
+

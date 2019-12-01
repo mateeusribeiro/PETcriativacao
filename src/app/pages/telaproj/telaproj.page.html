@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar color="dark"> 
+    <ion-icon (click)= "back()" name="arrow-round-back"></ion-icon>
+      <ion-title class="title">Empreendedorismo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+ 
+
+<ion-card class="card">
+  <ion-card-header>
+    <ion-card-title class="cardtitle">To Do</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-list>
+      <ion-item *ngFor="let projeto of lista">
+              <ion-avatar slot="start">
+                      <ion-icon class="icone" name="bookmark"></ion-icon>
+                      </ion-avatar>
+                      <ion-label>
+                              <h3 (click)="navegar(projeto.uid)"> {{projeto.nome}}</h3>
+                      </ion-label>
+                      </ion-item>
+  </ion-list>
+  </ion-card-content>
+</ion-card>
+
+<ion-card class="card">
+  <ion-card-header>
+    <ion-card-title class="cardtitle">Done</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-list>
+      <ion-item *ngFor="let projeto of lista">
+              <ion-avatar slot="start">
+                      <ion-icon class="icone" name="bookmark"></ion-icon>
+                      </ion-avatar>
+                      <ion-label class="label">
+                              <h3 (click)="navegar(projeto.uid)"> {{projeto.nome}}</h3>
+                      </ion-label>
+                      </ion-item>
+  </ion-list>
+  </ion-card-content>
+</ion-card>
+
+<ion-card class="card">
+    <ion-card-header>
+        <ion-card-title class="cardtitle">Alunos</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+<ion-list>
+  <ion-item *ngFor="let usuarios of listaUser">
+          <ion-avatar slot="start">
+                  <ion-icon class="icone" name="md-contact"></ion-icon>
+                  </ion-avatar>
+                  <ion-label>
+                          <h3> {{usuarios.nome}}</h3>
+                  </ion-label>
+                  </ion-item>
+</ion-list>
+</ion-card-content>
+</ion-card>
+
+
+</ion-content>
+
+ 

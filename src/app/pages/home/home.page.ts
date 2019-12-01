@@ -5,24 +5,26 @@ import { Login } from 'src/app/entities/login';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Projetos } from 'src/app/entities/projetos';
+import { Tarefas } from 'src/app/entities/tarefas';
+import { ModalController } from '@ionic/angular';
 
 import { AngularFireDatabase } from '@angular/fire/database';
 import { map } from 'rxjs/operators';
 import { DBService } from 'src/app/services/db.service';
-
+import { ProjetocadastroPage } from '../projetocadastro/projetocadastro.page';
+import { SelecionaPage } from '../seleciona/seleciona.page';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
-  providers: [DBService]
 })
 export class HomePage implements OnInit {
 
   lista: Projetos[];
   loading: any;
 
-  constructor(private dbService: DBService, private router: Router, public loadingController: LoadingController) {
+  constructor(private dbService: DBService, private router: Router, public loadingController: LoadingController,private modalController: ModalController) {
     this.lista = [];
     this.inicializarDados();
 
@@ -46,15 +48,6 @@ export class HomePage implements OnInit {
     await this.loading.present();
 
   }
-  telaProj() {
-    this.router.navigate(['projetocadastro']);
-  }
-  telaNotic() {
-    this.router.navigate(['noticiacadastro']);
-  }
-  telaTarefa() {
-    this.router.navigate(['tarefacadastro']);
-  }
   async deletar(key: string) {
     await this.dbService.remove('projeto', key);
 
@@ -63,21 +56,22 @@ export class HomePage implements OnInit {
     this.inicializarDados();
   }
 
-  edit(usuario) {
-    usuario.isEditing = true;
+   async edit() {
+    const modal = await this.modalController.create({
+    component: SelecionaPage
+  });
+  modal.present();
+
   }
   cadastrar() {
     this.router.navigate(['cadastros']);
   }
-  async navegar(){
-    await this.presentLoading();
-
-    this.router.navigate(['projeto']);
-    
-    await this.hideLoading();
-  }
   ngOnInit() {
   }
+   async add() {
+    const modal = await this.modalController.create({
+      component: SelecionaPage
+    });
+    modal.present();
+  }
 }
-
-

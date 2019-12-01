@@ -1,30 +1,19 @@
-<ion-header class="header">
-    <ion-toolbar>
-        <ion-title>Notícias</ion-title>
-        <ion-icon  (click)="add()" class="add" name="add"></ion-icon>
-        <ion-icon (click)="deletar(projeto.uid)" class="iconedelete" name="trash"></ion-icon>
-        <ion-icon (click)="editar(projeto.uid)" class="iconeedit" name="create"></ion-icon>
-    </ion-toolbar>
-<ion-content fullscreen>
-    <ion-card>
-      <img src="../../assets/icon/noticia.jpg" />
-      <ion-card-header>
-        <ion-card-subtitle>Destination</ion-card-subtitle>
-        <ion-card-title>Madison, WI</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named the capital of the Wisconsin Territory in 1836.
-      </ion-card-content>
-    </ion-card>
-  
-      <ion-card>
-        <img src="../../assets/icon/noticia.jpg" />
-        <ion-card-header>
-          <ion-card-subtitle>Destination</ion-card-subtitle>
-          <ion-card-title>Madison, WI</ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-          Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named the capital of the Wisconsin Territory in 1836.
-        </ion-card-content>
-      </ion-card>
-    </ion-content>
+<ion-content padding>
+<h3>Cadastre uma notícia</h3>
+<ion-item class="item">
+    <ion-label position="stacked">Título</ion-label>
+    <ion-label position="stacked">Subtitulo</ion-label>
+    <ion-button (click)="voltar()" shape="round" expand="full" class="back">Arquivo</ion-button>
+    <ion-input [(ngModel)]="newProjetos.nome" type="nome"></ion-input>
+</ion-item>
+
+<ion-button
+    [disabled]="!newProjetos.nome"
+    (click)="adicionarProj()" shape="round" expand="full" class="confirm">
+    SALVAR
+<ion-select-option *ngFor="let projetos of lista" value="{{projetos.nome}}">{{projetos.nome}}</ion-select-option>
+</ion-button>
+<ion-button (click)="voltar()" shape="round" expand="full" class="back">
+    VOLTAR
+</ion-button>
+</ion-content>

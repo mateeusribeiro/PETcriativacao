@@ -4,6 +4,7 @@ export class User {
     email: string;
     password: string;
     passwordrepeat: string;
+    uid: string;
 
 
 }

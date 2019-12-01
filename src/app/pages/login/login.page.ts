@@ -19,13 +19,14 @@ import { DBService } from 'src/app/services/db.service';
   providers: [DBService, AuthenticationService]
 
 })
-export class LoginPage {
+export class LoginPage{
   
   lista: Login[];
   email: string;
   password: string;
+  private loading: any;
 
-  constructor(private dbService: DBService, private router: Router, private authService: AuthenticationService, public alertController: AlertController ) { 
+  constructor(private dbService: DBService, private router: Router, private authService: AuthenticationService, public alertController: AlertController, private loadingCtrl: LoadingController, private toastCrtl: ToastController ) { 
       this.lista = [];
       this.inicializarLogins();
   }
@@ -50,8 +51,15 @@ async inicializarLogins() {
       });
       await alert.present();
   }
-  register(){
-    this.router.navigate(['cadastros']);
-  }
+ // async register(){
+   // await this.presentLoading();
+   // await this.authService.register(this.)
+    //this.router.navigate(['cadastros']);
+    //this.loading.dismiss();
+  //}
+  //async presentLoading() {
+   // this.loading = await this.loadingCtrl.create({message: 'Carregando...'})
+   // return loading.present();
+   // }
  
 }

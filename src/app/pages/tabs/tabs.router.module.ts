@@ -13,11 +13,6 @@ const routes: Routes = [
           {
             path: '',
             loadChildren: () =>
-              import('../home/home.module').then(m => m.HomePageModule)
-          },
-          {
-            path: '',
-            loadChildren: () =>
               import('../projeto/projeto.module').then(m => m.ProjetoPageModule)
           }
         ]
@@ -28,7 +23,7 @@ const routes: Routes = [
           {
             path: '',
             loadChildren: () =>
-              import('../tarefacadastro/tarefacadastro.module').then(m => m.TarefacadastroPageModule)
+              import('../tarefa/tarefa.module').then(m => m.TarefaPageModule)
           }
         ]
       },
@@ -38,7 +33,7 @@ const routes: Routes = [
           {
             path: '',
             loadChildren: () =>
-              import('../noticiacadastro/noticiacadastro.module').then(m => m.NoticiacadastroPageModule)
+              import('../noticia/noticia.module').then(m => m.NoticiaPageModule)
           }
         ]
     },

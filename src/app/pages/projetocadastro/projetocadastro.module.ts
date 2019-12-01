@@ -2,10 +2,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
-
 import { IonicModule } from '@ionic/angular';
 
 import { ProjetocadastroPage } from './projetocadastro.page';
+import { ProjetoPage } from '../projeto/projeto.page';
 
 const routes: Routes = [
   {
@@ -20,7 +20,8 @@ const routes: Routes = [
     FormsModule,
     IonicModule,
     RouterModule.forChild(routes)
-  ],
-  declarations: [ProjetocadastroPage]
+  ], 
+  declarations: [ProjetocadastroPage],
+  exports: [ProjetocadastroPage]
 })
 export class ProjetocadastroPageModule {}

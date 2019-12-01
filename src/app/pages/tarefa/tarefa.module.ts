@@ -4,15 +4,15 @@ import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
+import { TarefacadastroPage } from '../tarefacadastro/tarefacadastro.page';
 
-import { HomePage } from './home.page';
-import { ProjetocadastroPage } from '../projetocadastro/projetocadastro.page';
+import { TarefaPage } from './tarefa.page';
 import { SelecionaPage } from '../seleciona/seleciona.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: HomePage
+    component: TarefaPage
   }
 ];
 
@@ -21,9 +21,9 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    RouterModule.forChild([{ path: '', component: HomePage}])
+    RouterModule.forChild(routes)
   ],
-  declarations: [HomePage, ProjetocadastroPage, ],
-  entryComponents: [ProjetocadastroPage,]
+  declarations: [TarefaPage, TarefacadastroPage, SelecionaPage],
+  entryComponents: [TarefacadastroPage, SelecionaPage]
 })
-export class HomePageModule {}
+export class TarefaPageModule {}

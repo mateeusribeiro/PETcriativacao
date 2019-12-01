@@ -1,0 +1,30 @@
+<ion-header class="header">
+  <ion-toolbar color="dark">
+      <ion-title class="title">Notícias</ion-title>
+      <ion-icon  (click)="add()" class="add" name="add"></ion-icon>
+      <ion-icon (click)="deletar(projeto.uid)" class="iconedelete" name="trash"></ion-icon>
+      <ion-icon (click)="editar(projeto.uid)" class="iconeedit" name="create"></ion-icon>
+  </ion-toolbar>
+<ion-content fullscreen>
+  <ion-card>
+    <img src="../../assets/icon/noticia.jpg" />
+    <ion-card-header>
+      <ion-card-subtitle>Destination</ion-card-subtitle>
+      <ion-card-title>Madison, WI</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named the capital of the Wisconsin Territory in 1836.
+    </ion-card-content>
+  </ion-card>
+
+    <ion-card>
+      <img src="../../assets/icon/noticia.jpg" />
+      <ion-card-header>
+        <ion-card-subtitle>Destination</ion-card-subtitle>
+        <ion-card-title>Madison, WI</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named the capital of the Wisconsin Territory in 1836.
+      </ion-card-content>
+    </ion-card>
+  </ion-content>
