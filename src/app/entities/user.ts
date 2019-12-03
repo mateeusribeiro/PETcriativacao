@@ -5,6 +5,8 @@ export class User {
     password: string;
     passwordrepeat: string;
     uid: string;
+    image: string;
+    profileUID: string;
 
 
 }

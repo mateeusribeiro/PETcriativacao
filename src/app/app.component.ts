@@ -23,7 +23,7 @@ export class AppComponent {
     },
     {
       title: 'Configuração',
-      url: '/cadastro',
+      url: '/cadastros',
       icon: 'build'
     }
   ];

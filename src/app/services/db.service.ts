@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 
 import { Observable } from 'rxjs';
 import { AngularFireDatabase } from '@angular/fire/database';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 
 @Injectable()
 export class DBService {
 
-    constructor(public db: AngularFireDatabase) { }
+    constructor(public db: AngularFireDatabase, private afa: AngularFireAuth) { }
 
     listAndWatch<Type>(path: string): Observable<Type[]> {
         return this.db.list<Type>(path).valueChanges();
@@ -76,7 +77,17 @@ export class DBService {
                 );
         });
     }
-
+    getObjectByKey<Type>(entity: string, uid: string): Promise<Type> {
+        return new Promise<Type>((resolve, reject) => {
+            this.getObject<Type>(`/${entity}/${uid}`)
+                .then(object => {
+                    if (object) {
+                        object['uid'] = uid;
+                    }
+                    resolve(object);
+                }).catch(error => reject(error));
+        });
+    }
     getObjectAndWatch<Type>(path: string): Observable<Type> {
         return this.db.object<Type>(path).valueChanges();
     }

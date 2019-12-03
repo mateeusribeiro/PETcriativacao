@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: 'tarefa', loadChildren: './pages/tarefa/tarefa.module#TarefaPageModule' },
   { path: 'noticia', loadChildren: './pages/noticia/noticia.module#NoticiaPageModule' },
   { path: 'seleciona', loadChildren: './pages/seleciona/seleciona.module#SelecionaPageModule' },
-  { path: 'telaproj', loadChildren: './pages/telaproj/telaproj.module#TelaprojPageModule' }
+  { path: 'telaproj', loadChildren: './pages/telaproj/telaproj.module#TelaprojPageModule' },
 ];
 
 @NgModule({
