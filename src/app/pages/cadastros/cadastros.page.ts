@@ -48,9 +48,10 @@ export class CadastrosPage {
     await this.loading.present();
 
   }
-    adicionarUsuario() {
-      this.dbService.insertInList('usuarios', this.newUser);
-
+    async adicionarUsuario() {
+      await this.dbService.insertInList('usuarios', this.newUser);
+      
+      alert('Notícia cadastrada com sucesso!');
       this.newUser = new User();
     }
 

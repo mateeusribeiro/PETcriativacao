@@ -7,6 +7,6 @@ export class User {
     uid: string;
     image: string;
     profileUID: string;
-
+    photo: string;
 
 }

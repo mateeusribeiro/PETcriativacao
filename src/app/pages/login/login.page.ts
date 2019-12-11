@@ -1,7 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { Login } from 'src/app/entities/login';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { AlertController, ModalController, LoadingController, ToastController } from '@ionic/angular';
 import { AuthenticationService } from 'src/app/services/authentication.service';
+import { AngularFireDatabase } from '@angular/fire/database';
 import { DBService } from 'src/app/services/db.service';
 
 
@@ -14,6 +17,7 @@ import { DBService } from 'src/app/services/db.service';
 })
 export class LoginPage {
 
+  lista: Login[];
   email: string;
   password: string;
   private loading: any;
@@ -23,7 +27,14 @@ export class LoginPage {
     private authService: AuthenticationService,
     public alertController: AlertController,
     private loadingCtrl: LoadingController,
-    private toastCrtl: ToastController) {
+
+    private toastController: ToastController
+  ) {
+    this.lista = [];
+    this.inicializarLogins();
+  }
+  async inicializarLogins() {
+    this.lista = await this.dbService.listWithUIDs<Login>('logins');
   }
   login() {
     this.authService.login(this.email, this.password)
@@ -43,8 +54,7 @@ export class LoginPage {
     });
     await alert.present();
   }
-  registrar() {
-    this.router.navigate(['cadatros']);
+  register() {
+    this.router.navigate(['cadastros']);
   }
-
 }

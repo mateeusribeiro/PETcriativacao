@@ -15,12 +15,14 @@ const routes: Routes = [
   { path: 'tarefacadastro', loadChildren: './pages/tarefacadastro/tarefacadastro.module#TarefacadastroPageModule' },
   { path: 'projeto', loadChildren: './pages/projeto/projeto.module#ProjetoPageModule' },
   { path: 'tabs', loadChildren: './pages/tabs/tabs.module#TabsPageModule' },
-  { path: 'perfis', loadChildren: './pages/perfis/perfis.module#PerfisPageModule' },
   { path: 'home', loadChildren: './pages/home/home.module#HomePageModule' },
   { path: 'tarefa', loadChildren: './pages/tarefa/tarefa.module#TarefaPageModule' },
   { path: 'noticia', loadChildren: './pages/noticia/noticia.module#NoticiaPageModule' },
   { path: 'seleciona', loadChildren: './pages/seleciona/seleciona.module#SelecionaPageModule' },
   { path: 'telaproj', loadChildren: './pages/telaproj/telaproj.module#TelaprojPageModule' },
+  { path: 'edit-projeto', loadChildren: './pages/edit-projeto/edit-projeto.module#EditProjetoPageModule' },
+  { path: 'edit-tarefa', loadChildren: './pages/edit-tarefa/edit-tarefa.module#EditTarefaPageModule' },
+  { path: 'edit-noticia', loadChildren: './pages/edit-noticia/edit-noticia.module#EditNoticiaPageModule' },
 ];
 
 @NgModule({

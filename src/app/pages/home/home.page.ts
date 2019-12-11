@@ -11,7 +11,6 @@ import { ModalController } from '@ionic/angular';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { map } from 'rxjs/operators';
 import { DBService } from 'src/app/services/db.service';
-import { ProjetocadastroPage } from '../projetocadastro/projetocadastro.page';
 import { SelecionaPage } from '../seleciona/seleciona.page';
 
 @Component({
